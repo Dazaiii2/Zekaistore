@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+    <title>ZoroStore Clone | MLBB Top-Up</title>
+</head>
+<body class="bg-gray-900 text-white font-sans">
+    <nav class="p-6 border-b border-gray-800">
+        <h1 class="text-2xl font-bold"><span class="text-blue-500">ZORO</span><span class="text-white">STORE</span></h1>
+    </nav>
+
+    <div class="max-w-4xl mx-auto p-8">
+        <div class="bg-gray-800 p-6 rounded-xl shadow-lg border border-gray-700">
+            <h2 class="text-xl font-semibold mb-4">1. Enter Player ID</h2>
+            <div class="flex gap-4 flex-col md:flex-row">
+                <input id="userId" type="text" placeholder="User ID" class="w-full p-3 rounded bg-gray-700 border border-gray-600 focus:outline-none focus:border-blue-500" required>
+                <input id="zoneId" type="text" placeholder="Zone ID" class="w-full md:w-1/3 p-3 rounded bg-gray-700 border border-gray-600 focus:outline-none focus:border-blue-500" required>
+            </div>
+            <p id="playerError" class="text-red-500 text-sm mt-2 hidden"></p>
+        </div>
+
+        <div class="mt-8">
+            <h2 class="text-xl font-semibold mb-4">2. Select Diamonds</h2>
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                <button onclick="selectPackage('13', 5.00)" class="packageBtn p-4 bg-gray-800 border border-gray-700 rounded-xl hover:border-blue-500 transition duration-300" data-package-id="13">
+                    <p class="font-bold">86 Diamonds</p>
+                    <p class="text-sm text-gray-400">$5.00</p>
+                </button>
+                <button onclick="selectPackage('23', 10.00)" class="packageBtn p-4 bg-gray-800 border border-gray-700 rounded-xl hover:border-blue-500 transition duration-300" data-package-id="23">
+                    <p class="font-bold">172 Diamonds</p>
+                    <p class="text-sm text-gray-400">$10.00</p>
+                </button>
+                <button onclick="selectPackage('33', 20.00)" class="packageBtn p-4 bg-gray-800 border border-gray-700 rounded-xl hover:border-blue-500 transition duration-300" data-package-id="33">
+                    <p class="font-bold">344 Diamonds</p>
+                    <p class="text-sm text-gray-400">$20.00</p>
+                </button>
+                <button onclick="selectPackage('43', 50.00)" class="packageBtn p-4 bg-gray-800 border border-gray-700 rounded-xl hover:border-blue-500 transition duration-300" data-package-id="43">
+                    <p class="font-bold">860 Diamonds</p>
+                    <p class="text-sm text-gray-400">$50.00</p>
+                </button>
+            </div>
+            <p id="selectedPackage" class="text-blue-400 text-sm mt-3">No package selected</p>
+        </div>
+
+        <button onclick="payNow()" class="w-full mt-8 bg-blue-600 hover:bg-blue-700 p-4 rounded-xl font-bold text-lg shadow-lg transition duration-300 disabled:bg-gray-600 disabled:cursor-not-allowed" id="payBtn">
+            Pay & Top-Up Now
+        </button>
+        <p id="paymentError" class="text-red-500 text-sm mt-3 text-center hidden"></p>
+        <p id="paymentSuccess" class="text-green-500 text-sm mt-3 text-center hidden"></p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
